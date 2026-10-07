@@ -1,4 +1,5 @@
 import shiffConstants
+import decode
 
 
 def shift_letter(letter: str, shift: int) -> str:
@@ -21,3 +22,5 @@ def string_encode(s: str, shift: int) -> str:
 
 if __name__ == '__main__':
     print(string_encode('Hello, 123 world!', shiffConstants.positionIndex))
+    print(decode.string_decode(string_encode('Hello, 123 world!', shiffConstants.positionIndex)))
+    
