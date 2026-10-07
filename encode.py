@@ -2,13 +2,14 @@ import shiffConstants
 
 
 def shift_letter(letter: str, shift: int) -> str:
-    if not letter.isalpha():
+    if 'a' <= letter <= 'z':
+        base = ord('a')
+    elif 'A' <= letter <= 'Z':
+        base = ord('A')
+    else:
         return letter
 
-    code = ord(letter)
-
-    new_code = ((code + shift) % 128)
-    return chr(new_code)
+    return chr((ord(letter) - base + shift) % 26 + base)
 
 
 def string_encode(s: str, shift: int) -> str:
